@@ -35,6 +35,7 @@ class ArticleTableOfContentsDisplayController: Themeable {
         self.delegate = delegate
         self.theme = theme
         self.articleView = articleView
+        if #available(iOS 16.4, *) { articleView.isInspectable = true }
         stackView.semanticContentAttribute = delegate.tableOfContentsSemanticContentAttribute
         stackView.addArrangedSubview(inlineContainerView)
         stackView.addArrangedSubview(separatorView)

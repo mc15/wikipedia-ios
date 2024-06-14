@@ -136,6 +136,7 @@ class ArticleViewController: ViewController, HintPresenting {
     lazy var webView: WKWebView = {
         let webView = WMFWebView(frame: view.bounds, configuration: webViewConfiguration)
         view.addSubview(webView)
+        if #available(iOS 16.4, *) { webView.isInspectable = true }
         return webView
     }()
     

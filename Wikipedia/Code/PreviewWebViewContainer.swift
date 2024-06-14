@@ -25,6 +25,7 @@ class PreviewWebViewContainer: UIView, WKNavigationDelegate, Themeable {
         newWebView.scrollView.backgroundColor = .clear
         wmf_addSubviewWithConstraintsToEdges(newWebView)
         newWebView.navigationDelegate = self
+        if #available(iOS 16.4, *) { newWebView.isInspectable = true }
         return newWebView
     }()
 

@@ -61,6 +61,7 @@ class SinglePageWebViewController: ViewController {
     private lazy var webView: WKWebView = {
         let webView = WKWebView(frame: UIScreen.main.bounds, configuration: webViewConfiguration)
         webView.navigationDelegate = self
+        if #available(iOS 16.4, *) { webView.isInspectable = true }
         return webView
     }()
     

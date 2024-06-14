@@ -122,6 +122,7 @@ class ReadingThemesControlsArticlePresenter: NSObject, ReadingThemesControlsPres
     @objc init(readingThemesControlsViewController: ReadingThemesControlsViewController, wkWebView: WKWebView, readingThemesControlsToolbarItem: UIBarButtonItem) {
         self.readingThemesControlsViewController = readingThemesControlsViewController
         self.wkWebView = wkWebView
+        if #available(iOS 16.4, *) { wkWebView.isInspectable = true }
         self.readingThemesControlsToolbarItem = readingThemesControlsToolbarItem
         super.init()
     }

@@ -23,6 +23,7 @@ class ArticleWebMessagingController: NSObject {
         let parameters = PageContentService.Setup.Parameters(theme: theme.webName.lowercased(), dimImages: theme.imageOpacity < 1, margins: margins, leadImageHeight: "\(leadImageHeight)px", areTablesInitiallyExpanded: areTablesInitiallyExpanded, textSizeAdjustmentPercentage: "\(textSizeAdjustment)%", userGroups: userGroups)
         self.parameters = parameters
         self.webView = webView
+        if #available(iOS 16.4, *) { webView.isInspectable = true }
         let contentController = webView.configuration.userContentController
         contentController.add(self, name: PageContentService.messageHandlerName)
         self.contentController = contentController
